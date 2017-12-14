@@ -38,7 +38,39 @@ if (empty(trim($_POST["Messy"]))) {
     $Messy = trim($_POST['Messy']);
 }
 
+if (empty($username_err) && empty($password_err) && empty($confirm_password_err)&& empty($gender_err) && empty($age_err)&& empty($email_err) && empty($real_name_err) && empty($class_err)) {
 
+//String containing a prepare statement
+            $sql = "INSERT INTO quesResp (ques1,ques2,ques3,ques4,ques5,ques6,uID) VALUES (?,?,?,?,?,?,?)";
+
+            if ($insert_stmt = $mysqli->prepare($sql)) {
+                // Binding the variables into the insert_stmt
+                $insert_stmt->bind_param("iiiiii", $param_username, $param_password,$param_real_name,$param_age,$param_email,$param_gender,$param_uID);
+
+                // Set paramaters
+                $param_peace = $peace;
+                // HASH THE PASSWORD with bycrypt
+                $param_password = 
+
+                $param_age = (int)$age;
+
+                $param_class = $class;
+
+                $param_email = $email;
+
+                $param_real_name = $real_name;
+
+                $param_gender = $gender;
+                // Attempt to execut insert_smt
+                if ($insert_stmt->execute()) {
+                    // Redirect to login page
+                    header(location: index.php);
+                } else {
+                    echo "Something went wrong. Please try again";
+                }
+                $insert_stmt->close();
+            }
+        }
 
 
 
