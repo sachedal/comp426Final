@@ -1,6 +1,113 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
+	<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.profile-pic {
+	display: block;
+	margin: 0 auto;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    vertical-align: middle;
+    text-align: center;
+    color: transparent;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+
+
+
+.profile-pic span {
+    display: inline-block;
+    padding-top: 8.5em;
+    padding-bottom: 6.5em;
+}
+</style>
+<script>
+	function besocialfb() {
+    var txt;
+    var facebook = prompt("Please enter your Facebook page URL");
+    if (facebook == null || facebook == "") {
+        alert("User cancelled the prompt.");
+    } else {
+        alert("Saved");
+    }
+    
+}
+
+function besocialtw() {
+    var txt;
+    var twitter = prompt("Please enter your Twitter page URL");
+    if (twitter == null || twitter == "") {
+        alert("User cancelled the prompt.");
+    } else {
+        alert("Saved");
+    }
+    
+}
+
+function besocialld() {
+    var txt;
+    var linkedin = prompt("Please enter your LinkedIn page URL");
+    if (linkedin == null || linkedin == "") {
+        alert("User cancelled the prompt.");
+    } else {
+        alert("Saved");
+    }
+}
+	function myFunction() {
+	document.getElementById("myP").style.border = "thick solid red";
+    document.getElementById("myP1").style.border = "thick solid red";
+    document.getElementById("myP2").style.border = "thick solid red";
+    document.getElementById("myP3").style.border = "thick solid red";
+    document.getElementById("myP").contentEditable = true;
+    document.getElementById("myP1").contentEditable = true;
+    document.getElementById("myP2").contentEditable = true;
+    document.getElementById("myP3").contentEditable = true;
+}
+var theContent = $('#myP');
+var theContent4 = $('#myP1');
+var theContent2 = $('#myP2');
+var theContent3 = $('#myP3');
+ 
+function mySave(){
+	document.getElementById("myP").style.borderColor = "white";
+    document.getElementById("myP1").style.borderColor = "white";
+    document.getElementById("myP2").style.borderColor = "white";
+    document.getElementById("myP3").style.borderColor = "white";
+  var editedContent   = theContent.html();
+  var editedContent2   = theContent2.html();
+  var editedContent3  = theContent3.html();
+  var editedContent4  = theContent4.html();
+};
+</script>
   <meta charset="UTF-8">
   <title>Profile Page </title>
   <meta charset="utf-8" />
@@ -36,6 +143,8 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
         		</button>
+        		<button style="color: black;" class="glyphicons glyphicons-pencil" onclick="myFunction()" type="button">Click to Edit</button>
+        		<button onclick="mySave()" style="color: black;" id="save">Save Changes</button>
         		<!--<a class="navbar-brand" href="file:///Users/Madhu/Downloads/roommateSearch/index.html">ROOMMATE SEARCH</a> -->
         	</div>
         	<div class="search-container">
@@ -45,31 +154,13 @@
     			</form>
   			</div>
         	<div class="collapse navbar-collapse" id="navigation-example">
-        		<ul class="nav navbar-nav navbar-right">
-					    <li>
-    					  <!--<a id="editprofile" href="#" target="_blank" style="font-size: x-large;">
-    						  Edit Your Profile
-    					  </a>-->
-    				  </li>
-    				</ul>
-    				<ul>
-					<li>
-						<p > <a style="color: white" href="file:///Users/Madhu/Downloads/roommateSearch/index.html">Home</a> 
-							
-						
-					</li>
-					<li>
-						<p > <a style="color: white" href="file:///Users/Madhu/Downloads/roommateSearch/index.html">About Us</a>
-						   
-						
-					</li>
-					<li>
-						<p> <a style="color: white" href="file:///Users/Madhu/Desktop/Comp%20Classes/comp%20426/Final%20Project/survey.html">Edit Profile</a>
-						   
-						
-					</li>
-
-	            </ul>
+        		<ul>
+  					<li><a class="active" href="file:///Users/Madhu/Downloads/roommateSearch/index.html">Home</a></li>
+  					<li><a href="file:///Users/Madhu/Desktop/Comp%20Classes/comp%20426/Final%20Project/survey.html">Edit Profile</a></li>
+  					<li><a href="file:///Users/Madhu/Desktop/Comp%20Classes/comp%20426/Final%20Project/survey.html">See Similar Roommates</a></li>
+  					<li><a href="file:///Users/Madhu/Desktop/Comp%20Classes/comp%20426/Final%20Project/survey.html">About Us</a></li>
+  					<li><a href="../logout.php">Logout</a></li>
+				</ul>
         	</div>
     	</div>
     </nav>
@@ -82,10 +173,12 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
 					<div class="card card-header">
-						<img src="https://socialwelfare.library.vcu.edu/wp-content/uploads/2011/01/Susan_B_Anthony_c1855.jpg" alt="Circle Image" class="avatar img-circle img-responsive img-raised">
+						<div class="profile-pic" style="background-image: url('http://cs.sites.unc.edu/files/2013/12/Mayer-patel.jpeg')" >
+							<span class="glyphicon glyphicon-camera"></span>
+						</div>
 						
 						<h1>Susan B</h1>
-						<h3>Basketball Player</h3>
+						<h3 id="myP1">Basketball Player</h3>
 	                    
 	                    <div class="row cardindent">
 	                    	
@@ -131,33 +224,29 @@
 			            </div>
                   <div class="row">
                     <div class="col-md-12 col-xs-12">
-                      <h2>My Preferences</h2>
+                      <h2>Fun Facts</h2>
+                      
                       <blockquote>
-                        <p>
+                        <p id="myP">
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut facilisis felis at nunc commodo, a porta odio rutrum. Cras consectetur, augue nec cursus vulputate, risus nulla vulputate augue, vitae congue massa urna sit amet neque.
                         </p>
-                        <small>
-                          Curabitur lacinia, Dapibus
-                        </small>
+                        
                       </blockquote>
                       
                       <blockquote>
-                        <p>
+                        <p id="myP2">
                           Phasellus neque eros, laoreet sit amet enim ut, vestibulum malesuada sapien. Mauris ultrices sodales sapien a venenatis. Ut gravida nulla at mi efficitur, in laoreet sapien pharetra. Nam id purus elementum, cursus nisl ac, vehicula ligula. Vestibulum ac egestas augue.
                         </p>
-                        <small>
-                          Richard McClintock, Professor
-                        </small>
+                        
                       </blockquote>
                       
                       <blockquote>
-                        <p>
+                        <p id="myP3">
                           Sed id finibus nisi. Integer a ligula mollis, feugiat ante ac, sagittis elit. Nullam aliquet molestie ligula, in commodo elit. Sed cursus bibendum dictum. Proin dignissim vulputate felis, at rutrum purus maximus ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus.
                         </p>
-                        <small>
-                          Mauris Semper, Rhoncus
-                        </small>
+                        
                       </blockquote>
+                      
                     </div>
                     
                   </div>
@@ -180,13 +269,13 @@
                           <div class="header btn-blue text-center">
                             <h4>Be social!</h4>
                             <div class="social-line">
-                              <a href="#" class="btn btn-simple btn-just-icon">
-                                <i class="fa fa-500px"></i>
+                              <a onclick="besocialfb()" class="btn btn-simple btn-just-icon">
+                                <i class="fa fa-facebook"></i>
                               </a>
-                              <a href="#" class="btn btn-simple btn-just-icon">
+                              <a onclick="besocialtw()" class="btn btn-simple btn-just-icon">
                                 <i class="fa fa-twitter"></i>
                               </a>
-                              <a href="#" class="btn btn-simple btn-just-icon">
+                              <a onclick="besocialld()" class="btn btn-simple btn-just-icon">
                                 <i class="fa fa-linkedin"></i>
                               </a>
                             </div>
