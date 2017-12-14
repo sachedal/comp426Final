@@ -167,11 +167,58 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submit","qid":"2","text":"Subm
     margin-top: auto;
     margin-top: initial;
   }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #e0d7e8;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
   
   /*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/
     /* Injected CSS Code */
 </style>
+<nav class="navbar navbar-fixed-top btn-blue">
+      <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
 
+            <!--<a class="navbar-brand" href="file:///Users/Madhu/Downloads/roommateSearch/index.html">ROOMMATE SEARCH</a> -->
+          </div>
+          <div class="search-container">
+          <form action="/action_page.php">
+            <input type="text" placeholder="Enter Keywords" name="search" style="float: right;">
+            <button type="submit" style="float: right; color: black;">Search Roomies!</button> 
+          </form>
+        </div>
+          <div class="collapse navbar-collapse" id="navigation-example">
+            <ul>
+            <li><a class="active" href="file:///Users/Madhu/Downloads/roommateSearch/index.html">Home</a></li>
+            <li><a href="file:///Users/Madhu/Desktop/Comp%20Classes/comp%20426/Final%20Project/survey.html">Edit Profile</a></li>
+            <li><a href="file:///Users/Madhu/Desktop/Comp%20Classes/comp%20426/Final%20Project/survey.html">See Similar Roommates</a></li>
+            <li><a href="file:///Users/Madhu/Desktop/Comp%20Classes/comp%20426/Final%20Project/survey.html">About Us</a></li>
+            <li><a href="../logout.php">Logout</a></li>
+        </ul>
+          </div>
+      </div>
+    </nav>
 <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/buttons/form-submit-button-simple_blue.css?3.3.3141"/>
 <form class="jotform-form" action="https://submit.jotform.us/submit/73397697979184/" method="post" name="form_73397697979184" id="73397697979184" accept-charset="utf-8">
   <input type="hidden" name="formID" value="73397697979184" />
