@@ -7,35 +7,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-if (empty(trim($_POST["real_name"]))) {
-    $real_name_err = 'Please Enter Name.';
+if (empty(trim($_POST["Peace"]))) {
+    $peace_err = 'Please Enter a Proper Answer';
 } else {
-    $real_name = trim($_POST['real_name']);
+    $peace = trim($_POST['Peace']);
 }
-if (empty(trim($_POST["email"]))) {
-    $email_err = 'Pleas Enter Email.';
+if (empty(trim($_POST["Never"]))) {
+    $never_err = 'Please Enter a Proper Answer';
 } else {
-    $email = trim($_POST['email']);
+    $never = trim($_POST['Never']);
 }
-if (empty(trim($_POST["gender"]))) {
-    $gender_err = 'Please Select Gender.';
+if (empty(trim($_POST["Never2"]))) {
+    $never2_err = 'Please Enter a Proper Answer';
 } else {
-    $gender = trim($_POST['gender']);
+    $never2 = trim($_POST['Never2']);
 }
-if (empty(trim($_POST["gender"]))) {
-    $gender_err = 'Please Select Gender.';
+if (empty(trim($_POST["Never3"]))) {
+    $Never3_err = 'Please Enter a Proper Answer';
 } else {
-    $gender = trim($_POST['gender']);
+    $Never3 = trim($_POST['Never3']);
 }
-if (empty(trim($_POST["age"]))) {
-    $age_err = 'Please Enter Age.';
+if (empty(trim($_POST["Issue"]))) {
+    $Issue_err = 'Please Enter a Proper Answer';
 } else {
-    $age = trim($_POST['age']);
+    $Issue = trim($_POST['Issue']);
 }
-if (empty(trim($_POST["class"]))) {
-    $class_err = 'Please Select Class.';
+if (empty(trim($_POST["Messy"]))) {
+    $Messy_err = 'Please Select Class.';
 } else {
-    $class = trim($_POST['class']);
+    $Messy = trim($_POST['Messy']);
 }
 
 
@@ -303,20 +303,21 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submit","qid":"2","text":"Subm
                 <td>
                   <label for="input_27_1"> Peaceful/Quiet </label>
                 </td>
+                <!-- Changes Made part 1 -->
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q27_1The" value="1" title="1" id="input_27_1" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Peace" value="1" title="1" id="input_27_1" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q27_1The" value="2" title="2" id="input_27_2" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Peace" value="2" title="2" id="input_27_2" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q27_1The" value="3" title="3" id="input_27_3" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Peace" value="3" title="3" id="input_27_3" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q27_1The" value="4" title="4" id="input_27_4" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Peace" value="4" title="4" id="input_27_4" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q27_1The" value="5" title="5" id="input_27_5" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Peace" value="5" title="5" id="input_27_5" required="" />
                 </td>
                 <td>
                   <label for="input_27_5"> Lively/Social </label>
@@ -364,19 +365,19 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submit","qid":"2","text":"Subm
                   <label for="input_28_1"> Never </label>
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q28_2The" value="1" title="1" id="input_28_1" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Never" value="1" title="1" id="input_28_1" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q28_2The" value="2" title="2" id="input_28_2" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Never" value="2" title="2" id="input_28_2" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q28_2The" value="3" title="3" id="input_28_3" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Never" value="3" title="3" id="input_28_3" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q28_2The" value="4" title="4" id="input_28_4" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Never" value="4" title="4" id="input_28_4" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q28_2The" value="5" title="5" id="input_28_5" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Never" value="5" title="5" id="input_28_5" required="" />
                 </td>
                 <td>
                   <label for="input_28_5"> Within Reason </label>
@@ -424,19 +425,19 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submit","qid":"2","text":"Subm
                   <label for="input_29_1"> Never </label>
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q29_3The29" value="1" title="1" id="input_29_1" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Never2" value="1" title="1" id="input_29_1" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q29_3The29" value="2" title="2" id="input_29_2" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Never2" value="2" title="2" id="input_29_2" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q29_3The29" value="3" title="3" id="input_29_3" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Never2" value="3" title="3" id="input_29_3" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q29_3The29" value="4" title="4" id="input_29_4" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Never2" value="4" title="4" id="input_29_4" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q29_3The29" value="5" title="5" id="input_29_5" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Never2" value="5" title="5" id="input_29_5" required="" />
                 </td>
                 <td>
                   <label for="input_29_5"> Daily </label>
@@ -484,19 +485,19 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submit","qid":"2","text":"Subm
                   <label for="input_30_1"> Never </label>
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q30_4It" value="1" title="1" id="input_30_1" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Never3" value="1" title="1" id="input_30_1" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q30_4It" value="2" title="2" id="input_30_2" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Never3" value="2" title="2" id="input_30_2" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q30_4It" value="3" title="3" id="input_30_3" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Never3" value="3" title="3" id="input_30_3" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q30_4It" value="4" title="4" id="input_30_4" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Never3" value="4" title="4" id="input_30_4" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q30_4It" value="5" title="5" id="input_30_5" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Never3" value="5" title="5" id="input_30_5" required="" />
                 </td>
                 <td>
                   <label for="input_30_5"> Daily </label>
@@ -545,19 +546,19 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submit","qid":"2","text":"Subm
                   <label for="input_31_1"> Not an Issue </label>
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q31_5What31" value="1" title="1" id="input_31_1" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Issue" value="1" title="1" id="input_31_1" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q31_5What31" value="2" title="2" id="input_31_2" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Issue" value="2" title="2" id="input_31_2" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q31_5What31" value="3" title="3" id="input_31_3" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Issue" value="3" title="3" id="input_31_3" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q31_5What31" value="4" title="4" id="input_31_4" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Issue" value="4" title="4" id="input_31_4" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q31_5What31" value="5" title="5" id="input_31_5" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Issue" value="5" title="5" id="input_31_5" required="" />
                 </td>
                 <td>
                   <label for="input_31_5"> Upset </label>
@@ -605,19 +606,19 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submit","qid":"2","text":"Subm
                   <label for="input_32_1"> Messy </label>
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q32_6What" value="1" title="1" id="input_32_1" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Messy" value="1" title="1" id="input_32_1" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q32_6What" value="2" title="2" id="input_32_2" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Messy" value="2" title="2" id="input_32_2" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q32_6What" value="3" title="3" id="input_32_3" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Messy" value="3" title="3" id="input_32_3" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q32_6What" value="4" title="4" id="input_32_4" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Messy" value="4" title="4" id="input_32_4" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q32_6What" value="5" title="5" id="input_32_5" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Messy" value="5" title="5" id="input_32_5" required="" />
                 </td>
                 <td>
                   <label for="input_32_5"> Immaculate </label>
@@ -665,19 +666,19 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submit","qid":"2","text":"Subm
                   <label for="input_33_1"> Before 7 AM </label>
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q33_6What" value="1" title="1" id="input_33_1" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Before_7_AM" value="1" title="1" id="input_33_1" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q33_6What" value="2" title="2" id="input_33_2" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Before_7_AM" value="2" title="2" id="input_33_2" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q33_6What" value="3" title="3" id="input_33_3" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Before_7_AM" value="3" title="3" id="input_33_3" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q33_6What" value="4" title="4" id="input_33_4" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Before_7_AM" value="4" title="4" id="input_33_4" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q33_6What" value="5" title="5" id="input_33_5" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Before_7_AM" value="5" title="5" id="input_33_5" required="" />
                 </td>
                 <td>
                   <label for="input_33_5"> After 11 AM </label>
@@ -725,19 +726,19 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submit","qid":"2","text":"Subm
                   <label for="input_34_1"> Before 9 PM </label>
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q34_6What" value="1" title="1" id="input_34_1" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Before_9_PM" value="1" title="1" id="input_34_1" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q34_6What" value="2" title="2" id="input_34_2" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Before_9_PM" value="2" title="2" id="input_34_2" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q34_6What" value="3" title="3" id="input_34_3" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Before_9_PM" value="3" title="3" id="input_34_3" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q34_6What" value="4" title="4" id="input_34_4" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Before_9_PM" value="4" title="4" id="input_34_4" required="" />
                 </td>
                 <td style="text-align:center;">
-                  <input class="form-radio validate[required]" type="radio" name="q34_6What" value="5" title="5" id="input_34_5" required="" />
+                  <input class="form-radio validate[required]" type="radio" name="Before_9_PM" value="5" title="5" id="input_34_5" required="" />
                 </td>
                 <td>
                   <label for="input_34_5"> After 1 AM </label>
