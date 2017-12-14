@@ -8,19 +8,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 if (empty(trim($_POST["Peace"]))) {
-    $peace_err = 'Please Enter a Proper Answer';
+    $Peace_err = 'Please Enter a Proper Answer';
 } else {
-    $peace = trim($_POST['Peace']);
+    $Peace = trim($_POST['Peace']);
 }
 if (empty(trim($_POST["Never"]))) {
-    $never_err = 'Please Enter a Proper Answer';
+    $Never_err = 'Please Enter a Proper Answer';
 } else {
-    $never = trim($_POST['Never']);
+    $Never = trim($_POST['Never']);
 }
 if (empty(trim($_POST["Never2"]))) {
-    $never2_err = 'Please Enter a Proper Answer';
+    $Never2_err = 'Please Enter a Proper Answer';
 } else {
-    $never2 = trim($_POST['Never2']);
+    $Never2 = trim($_POST['Never2']);
 }
 if (empty(trim($_POST["Never3"]))) {
     $Never3_err = 'Please Enter a Proper Answer';
@@ -38,29 +38,27 @@ if (empty(trim($_POST["Messy"]))) {
     $Messy = trim($_POST['Messy']);
 }
 
-if (empty($username_err) && empty($password_err) && empty($confirm_password_err)&& empty($gender_err) && empty($age_err)&& empty($email_err) && empty($real_name_err) && empty($class_err)) {
+if (empty($Peace_err) && empty($Never_err) && empty($Never2_err) && empty($Never3_err) && empty($Issue_err)&& empty($Messy_err)) {
 
 //String containing a prepare statement
             $sql = "INSERT INTO quesResp (ques1,ques2,ques3,ques4,ques5,ques6,uID) VALUES (?,?,?,?,?,?,?)";
 
             if ($insert_stmt = $mysqli->prepare($sql)) {
                 // Binding the variables into the insert_stmt
-                $insert_stmt->bind_param("iiiiii", $param_username, $param_password,$param_real_name,$param_age,$param_email,$param_gender,$param_uID);
+                $insert_stmt->bind_param("iiiiii", $param_Peace, $param_Never,$param_Never2,$param_Never3,$param_Issue,$param_Messy,$param_uID);
 
                 // Set paramaters
-                $param_peace = $peace;
+                $param_Peace = $Peace;
                 // HASH THE PASSWORD with bycrypt
-                $param_password = 
+                $param_Never = $Never;
 
-                $param_age = (int)$age;
+                $param_Issue = (int)$Issue;
 
-                $param_class = $class;
+                $param_Never2 = $Never2;
 
-                $param_email = $email;
+                $param_Messy = $Messy;
 
-                $param_real_name = $real_name;
-
-                $param_gender = $gender;
+                $param_Never3 = $Never3;
                 // Attempt to execut insert_smt
                 if ($insert_stmt->execute()) {
                     // Redirect to login page
@@ -253,9 +251,9 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submit","qid":"2","text":"Subm
   -o-background-size: cover;
   background-size: cover; }
 
-  	h2{
-  		background-color: #a9a9b2;
-  	}
+    h2{
+      background-color: #a9a9b2;
+    }
 
 
   .ie-8 .form-all:before { display: none; }
