@@ -1,0 +1,190 @@
+<?php
+if (empty(trim($_POST["real_name"]))) {
+    $real_name_err = 'Please Enter Name.';
+} else {
+    $real_name = trim($_POST['real_name']);
+}
+if (empty(trim($_POST["email"]))) {
+    $email_err = 'Pleas Enter Email.';
+} else {
+    $email = trim($_POST['email']);
+}
+if (empty(trim($_POST["gender"]))) {
+    $gender_err = 'Please Select Gender.';
+} else {
+    $gender = trim($_POST['gender']);
+}
+if (empty(trim($_POST["gender"]))) {
+    $gender_err = 'Please Select Gender.';
+} else {
+    $gender = trim($_POST['gender']);
+}
+if (empty(trim($_POST["age"]))) {
+    $age_err = 'Please Enter Age.';
+} else {
+    $age = trim($_POST['age']);
+}
+if (empty(trim($_POST["class"]))) {
+    $class_err = 'Please Select Class.';
+} else {
+    $class = trim($_POST['class']);
+}
+
+
+
+$sql = "INSERT INTO member (username,password,realName,Age,email,Gender,class) VALUES (?,?,?,?,?,?,?)";
+
+if ($insert_stmt = $mysqli->prepare($sql)) {
+    // Binding the variables into the insert_stmt
+    $insert_stmt->bind_param("sssisss", $param_username, $param_password,$param_real_name,$param_age,$param_email,$param_gender,$param_class);
+
+    // Set paramaters
+    $param_username = $username;
+    // HASH THE PASSWORD with bycrypt
+    $param_password = password_hash($password, PASSWORD_DEFAULT);
+
+    $param_age = (int)$age;
+
+    $param_class = $class;
+
+    $param_email = $email;
+
+    $param_real_name = $real_name;
+
+    $param_gender = $gender;
+    // Attempt to execut insert_smt
+    if ($insert_stmt->execute()) {
+          $sql = "INSERT INTO favApartment(uID) VALUES (?)";
+          if ($exist_check_stmt = $mysqli->prepare($sql)) {
+              // Bind variables to the prepared statement as parameters
+              $exist_check_stmt->bind_param("i",$param_uID);
+
+              // Set parameters
+              $param_uID = $mysqli->insert_id;
+              if ($exist_check_stmt->execute()){
+              }
+      }
+        // Redirect to login page
+        header("location: index.php");
+    } else {
+        echo "Something went wrong. Please try again";
+    }
+    $insert_stmt->close();
+}
+
+
+
+
+
+
+
+
+
+?>
+<html>
+    <head>
+        <title>RoomateSearch</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+        <link href='custom.css' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-8 col-lg-offset-2">
+
+                    <h1>Tell People Who You Are!</h1>
+
+                    <form id="contact-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" role="form">
+
+                        <div class="messages"></div>
+
+                        <div class="controls">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_name">Occupation*</label>
+                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Enter your occupation" required="required" data-error="Occupation is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_lastname">Facebook</label>
+                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Facebook URL">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_email">Linkedin</label>
+                                        <input id="form_email" type="text" name="email" class="form-control" placeholder="Linkedin URL">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_phone">Twitter</label>
+                                        <input id="form_phone" type="text" name="phone" class="form-control" placeholder="Twitter URL">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="form_message">Fun Fact #1*</label>
+                                        <textarea id="form_message" name="message" class="form-control" placeholder="Tell us about yourself" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="form_message2">Fun Fact #2*</label>
+                                        <textarea id="form_message2" name="message" class="form-control" placeholder="Tell us about yourself" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="form_message3">Fun Fact #3*</label>
+                                        <textarea id="form_message3" name="message" class="form-control" placeholder="Tell us about yourself" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-12">
+                                    <input type="submit" class="btn btn-success btn-send" value="Submit">
+                                </div> -->
+                                <input type="submit" class="btn btn-success btn-send" value="Submit">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="text-muted"><strong>*</strong> These fields are required.</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div><!-- /.8 -->
+
+            </div> <!-- /.row-->
+
+        </div> <!-- /.container-->
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="validator.js"></script>
+        <script src="contact.js"></script>
+    </body>
+</html>
