@@ -1,57 +1,57 @@
 <?php
-if (empty(trim($_POST["real_name"]))) {
-    $real_name_err = 'Please Enter Name.';
+if (empty(trim($_POST["Occupation"]))) {
+    $Occupation_err = 'Enter Occupation';
 } else {
-    $real_name = trim($_POST['real_name']);
+    $Occupation = trim($_POST['Occupation']);
 }
-if (empty(trim($_POST["email"]))) {
-    $email_err = 'Pleas Enter Email.';
+if (empty(trim($_POST["FB"]))) {
+    $FB_err = 'Enter FB URL';
 } else {
-    $email = trim($_POST['email']);
+    $FB = trim($_POST['FB']);
 }
-if (empty(trim($_POST["gender"]))) {
-    $gender_err = 'Please Select Gender.';
+if (empty(trim($_POST["Linkedin"]))) {
+    $Linkedin_err = 'Linkedin';
 } else {
-    $gender = trim($_POST['gender']);
+    $Linkedin = trim($_POST['Linkedin']);
 }
-if (empty(trim($_POST["gender"]))) {
-    $gender_err = 'Please Select Gender.';
+if (empty(trim($_POST["Twitter"]))) {
+    $Twitter_err = 'Twitter';
 } else {
-    $gender = trim($_POST['gender']);
+    $Twitter = trim($_POST['Twitter']);
 }
-if (empty(trim($_POST["age"]))) {
-    $age_err = 'Please Enter Age.';
+if (empty(trim($_POST["FF1"]))) {
+    $FF1_err = 'FF1';
 } else {
-    $age = trim($_POST['age']);
+    $FF1 = trim($_POST['FF1']);
 }
-if (empty(trim($_POST["class"]))) {
-    $class_err = 'Please Select Class.';
+if (empty(trim($_POST["FF2"]))) {
+    $FF2_err = 'FF2';
 } else {
-    $class = trim($_POST['class']);
+    $FF2 = trim($_POST['FF2']);
 }
 
 
 
-$sql = "INSERT INTO member (username,password,realName,Age,email,Gender,class) VALUES (?,?,?,?,?,?,?)";
+$sql = "INSERT INTO member (Occupation,FB,Linkedin,Twitter,FF1,FF2,FF3) VALUES (?,?,?,?,?,?,?)";
 
 if ($insert_stmt = $mysqli->prepare($sql)) {
     // Binding the variables into the insert_stmt
-    $insert_stmt->bind_param("sssisss", $param_username, $param_password,$param_real_name,$param_age,$param_email,$param_gender,$param_class);
+    $insert_stmt->bind_param("sssisss", $param_Occupation, $param_FB,$param_Linkedin,$param_Twitter,$param_FF1,$param_FF2,$param_FF3);
 
     // Set paramaters
-    $param_username = $username;
+    $param_Occupation = $Occupation;
     // HASH THE PASSWORD with bycrypt
-    $param_password = password_hash($password, PASSWORD_DEFAULT);
+    $param_FB = $FB;
 
-    $param_age = (int)$age;
+    $param_Linkedin = $Linkedin;
 
-    $param_class = $class;
+    $param_Twitter = $Twitter;
 
-    $param_email = $email;
+    $param_FF1 = $FF1;
 
-    $param_real_name = $real_name;
+    $param_FF2 = $real_FF2;
 
-    $param_gender = $gender;
+    $param_FF3 = $FF3;
     // Attempt to execut insert_smt
     if ($insert_stmt->execute()) {
           $sql = "INSERT INTO favApartment(uID) VALUES (?)";
@@ -110,14 +110,14 @@ if ($insert_stmt = $mysqli->prepare($sql)) {
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="form_name">Occupation*</label>
-                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Enter your occupation" required="required" data-error="Occupation is required.">
+                                        <input id="form_name" type="text" name="occupation" class="form-control" placeholder="Enter your occupation" required="required" data-error="Occupation is required.">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="form_lastname">Facebook</label>
-                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Facebook URL">
+                                        <input id="form_lastname" type="text" name="FB" class="form-control" placeholder="Facebook URL">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -126,14 +126,14 @@ if ($insert_stmt = $mysqli->prepare($sql)) {
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="form_email">Linkedin</label>
-                                        <input id="form_email" type="text" name="email" class="form-control" placeholder="Linkedin URL">
+                                        <input id="form_email" type="text" name="Linkedin" class="form-control" placeholder="Linkedin URL">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="form_phone">Twitter</label>
-                                        <input id="form_phone" type="text" name="phone" class="form-control" placeholder="Twitter URL">
+                                        <input id="form_phone" type="text" name="Twitter" class="form-control" placeholder="Twitter URL">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -142,7 +142,7 @@ if ($insert_stmt = $mysqli->prepare($sql)) {
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="form_message">Fun Fact #1*</label>
-                                        <textarea id="form_message" name="message" class="form-control" placeholder="Tell us about yourself" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                                        <textarea id="form_message" name="FF1" class="form-control" placeholder="Tell us about yourself" rows="4" required="required" data-error="Please,leave us a message."></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -150,7 +150,7 @@ if ($insert_stmt = $mysqli->prepare($sql)) {
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="form_message2">Fun Fact #2*</label>
-                                        <textarea id="form_message2" name="message" class="form-control" placeholder="Tell us about yourself" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                                        <textarea id="form_message2" name="FF2" class="form-control" placeholder="Tell us about yourself" rows="4" required="required" data-error="Please,leave us a message."></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -158,7 +158,7 @@ if ($insert_stmt = $mysqli->prepare($sql)) {
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="form_message3">Fun Fact #3*</label>
-                                        <textarea id="form_message3" name="message" class="form-control" placeholder="Tell us about yourself" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                                        <textarea id="form_message3" name="FF3" class="form-control" placeholder="Tell us about yourself" rows="4" required="required" data-error="Please,leave us a message."></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
